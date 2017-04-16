@@ -105,28 +105,80 @@ func abstractNodes (params:Parameter ) ->Array<[String: Double]>   {
     
     return grid
 }
-
-
-
-
 ////////////////////////////////////////////////////////////////
+// abstractPanels
+func abstractPanels (params:Parameter ) ->Array<[String: Double]>   {
+    
+    let x = (params.x-(params.width/2))
+    let y = (params.y-(params.height/2))
+    let height = params.height
+    let width = params.width
+    let AmountX = params.AmountX
+    let AmountY = params.AmountY
+    
+    var x1: Double = x
+    var y1: Double = y
+    var pm: Double = 0
+    
+    var grid = [[String: Double]]()
+    
+    for j in 0..<Int(AmountY) {
+        
+        for i in 0..<Int(AmountX) {
+            pm = ((width/AmountX)*Double(i))
+            
+            x1 = (x+pm)
+            y1 = y+((height/AmountY)*Double(j))
+            
+            grid.append(["x1": x1, "y1": y1])
+            
+        }
+        
+    }
+    
+    return grid
+}
+////////////////////////////////////////////////////////////////
+// Call it
+let p = Parameter(x:10,y:10,height:100, width:100, AmountX:4, AmountY:4)
+let grid = abstractGrid(params:p)
+let node = abstractNodes(params:p)
+let panel = abstractPanels(params:p)
+////////////////////////////////////////////////////////////////
+
 let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0))
 containerView.backgroundColor = UIColor.red
 
 PlaygroundPage.current.liveView = containerView
 
 ////////////////////////////////////////////////////////////////
+// Canvas
+let rect = UIView(frame: CGRect(
+    origin: CGPoint(x: p.x, y: p.y),
+    size: CGSize.init(width: p.width, height: p.height)
+))
+
+rect.backgroundColor = UIColor.blue
+
+containerView.addSubview(rect);
+
+////////////////////////////////////////////////////////////////
+// grid lines
 
 
 
-let circle = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
-circle.center = containerView.center
-circle.layer.cornerRadius = 25.0
 
-let startingColor = UIColor(red: (253.0/255.0), green: (159.0/255.0), blue: (47.0/255.0), alpha: 1.0)
-circle.backgroundColor = startingColor
 
-containerView.addSubview(circle);
+////////////////////////////////////////////////////////////////
+
+// let circle = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
+// circle.center = containerView.center
+// circle.layer.cornerRadius = 25.0
+
+// let startingColor = UIColor(red: (253.0/255.0), green: (159.0/255.0), blue: (47.0/255.0), alpha: 1.0)
+// circle.backgroundColor = startingColor
+
+// containerView.addSubview(circle);
 
 
 
