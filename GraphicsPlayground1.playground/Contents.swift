@@ -158,7 +158,7 @@ let rect = UIView(frame: CGRect(
     size: CGSize.init(width: p.width, height: p.height)
 ))
 
-rect.backgroundColor = UIColor.blue
+rect.backgroundColor = UIColor.white
 
 containerView.addSubview(rect);
 
