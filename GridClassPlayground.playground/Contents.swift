@@ -3,20 +3,27 @@
 import UIKit
 import PlaygroundSupport
 
-// Create a new instance of the mathClass
-//let math = mathClass();
-//
-//print(math.add(a: 1, with:1));
-//print(math.multiply(a: 2, with:5));
-//
 
-//let p = Parameter(x:10,y:10,height:100, width:100, AmountX:4, AmountY:4)
+let x: Double = 0
+let y: Double = 0
+let height: Double = 40
+let width: Double = 40
+let AmountX: Double = 4
+let AmountY: Double = 4
 
-let p = parameter()
+
+let myp = ["x":x, "y":y, "height":height, "width":width, "AmountX": AmountX, "AmountY":AmountY]
+
+let p = parameter(p: myp)
 // Get element for key "name"
 
-let height = p.set()["height"] as! Double
 
-print(p.set()["height"] as! Double)
+// let height = p.set()["height"] as! Double
+
+// print(p.set()["height"] as! Double)
+
+// p.test(firstThing: "M")
+
+print(p.get())
 
 

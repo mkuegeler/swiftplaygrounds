@@ -8,6 +8,18 @@ import CoreGraphics
 import PlaygroundSupport
 
 // ---------------------------------------------------------------------------
+
+// Parameter
+struct Parameter {
+    let x: Double
+    let y: Double
+    let height: Double
+    let width: Double
+    let AmountX: Double
+    let AmountY: Double
+}
+
+
 // Define Custom colors
 // see here: http://www.codingexplorer.com/create-uicolor-swift/
 
@@ -22,18 +34,44 @@ extension UIColor {
 }
 let newSwiftColor = UIColor(red: 255, green: 0, blue: 255)
 
-// Initial screen values
+// Initial screen values and view
 // ---------------------------------------------------------------------------
+// Width and height of canvas
 let maxwidth = UIScreen.main.bounds.width
 let maxheight = UIScreen.main.bounds.height
+// View of canvas
+let containerView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight))
+
+// Create Gradient Layer
+
+func gradient (containerView: UIView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight)),
+               startPoint: CGPoint = CGPoint(x: 0.0, y: 0.95), endPoint: CGPoint = CGPoint(x: 1.0, y: 0.05)) {
+    
+    let gradientLayer = CAGradientLayer()
+    
+    
+    // Set Layer Size
+    gradientLayer.frame = (containerView.frame)
+    
+    // Provide an Array of CGColors
+    gradientLayer.colors = [UIColor.magenta.cgColor, UIColor.cyan.cgColor]
+    
+    // Guesstimate a Match to 47° in Coordinates
+    gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.95)
+    gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.05)
+
+    
+}
+
+// gradient()
+
 // ---------------------------------------------------------------------------
 // Custom functions
 // ---------------------------------------------------------------------------
 // Canvas: The core element
 // ---------------------------------------------------------------------------
-func canvas (x: CGFloat = 0, y: CGFloat = 0, w: CGFloat = maxwidth, h: CGFloat = maxheight, bgcolor: UIColor? = UIColor.red) {
+func canvas (containerView: UIView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight)), bgcolor: UIColor? = UIColor.red) {
     
-    let containerView = UIView(frame: CGRect(x:x, y:y,width: w,height: h))
     
     containerView.backgroundColor = bgcolor
     
@@ -66,6 +104,17 @@ func gradientCanvas (x: CGFloat = 0, y: CGFloat = 0, w: CGFloat = maxwidth, h: C
     // Add Gradient Layer to Test View
     containerView.layer.addSublayer(gradientLayer)
     
+    let rect = UIView(frame: CGRect(
+        origin: CGPoint(x: 100, y: 10),
+        size: CGSize.init(width: 300, height: 100)
+    ))
+    
+    rect.backgroundColor = UIColor.red
+    
+    containerView.addSubview(rect);
+    
+    
+    
     // containerView.backgroundColor = bgcolor
     
     PlaygroundPage.current.liveView = containerView
@@ -75,7 +124,25 @@ func gradientCanvas (x: CGFloat = 0, y: CGFloat = 0, w: CGFloat = maxwidth, h: C
 }
 gradientCanvas()
 
-
 // ---------------------------------------------------------------------------
+// Rectangle
+
+func rect () {
+    
+    let containerView = UIView(frame: CGRect(x:0, y:0,width: 400,height: 400))
+    
+    let p = Parameter(x:10,y:10,height:100, width:100, AmountX:4, AmountY:4)
+    
+    let rect = UIView(frame: CGRect(
+        origin: CGPoint(x: p.x, y: p.y),
+        size: CGSize.init(width: p.width, height: p.height)
+    ))
+    
+    rect.backgroundColor = UIColor.blue
+    
+    containerView.addSubview(rect);
+    
+}
+// rect()
 
 
