@@ -1,6 +1,6 @@
 import Foundation
 
-public class Test2 {
+public class Test_Slide {
     public static func run() {
         let slide = Slide()
         let result = slide.sample()

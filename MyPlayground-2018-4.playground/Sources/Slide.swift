@@ -18,7 +18,7 @@ class Slide {
         // View of canvas
         let containerView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight))
         
-        containerView.backgroundColor = UIColor.red
+        containerView.backgroundColor = UIColor.blue
         
         PlaygroundPage.current.liveView = containerView
         
