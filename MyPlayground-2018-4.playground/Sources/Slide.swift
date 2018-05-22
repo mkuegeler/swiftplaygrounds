@@ -15,6 +15,11 @@ class Slide {
         let maxwidth = UIScreen.main.bounds.width
         let maxheight = UIScreen.main.bounds.height
         
+        // PowerPoint wide-screen format: 1282x721
+        
+        // let w: Double = 1282
+        // let h: Double = 721
+        
         // View of canvas
         let containerView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight))
         
