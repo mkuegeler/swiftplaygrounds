@@ -1,26 +1,24 @@
 import Foundation
+
 // https://stackoverflow.com/questions/24410881/reading-in-a-json-file-using-swift/30548130
 class ReadParams {
-    func do_something() -> String {
-        return "Sample Class"
-    }
     
     struct ResponseData: Decodable {
-        var person: [Person]
+        var slides: [Slide]
     }
-    struct Person : Decodable {
-        var name: String
-        var age: String
-        var employed: String
+    struct Slide : Decodable {
+        var id: Double
+        var title: String
+        var background: String
     }
     
-    func loadJson(filename fileName: String) -> [Person]? {
+    func loadJson(filename fileName: String) -> [Slide]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode(ResponseData.self, from: data)
-                return jsonData.person
+                return jsonData.slides
             } catch {
                 print("error:\(error)")
             }

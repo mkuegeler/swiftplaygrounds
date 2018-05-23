@@ -1,0 +1,15 @@
+{
+    "slides":[
+                 {
+                 "id": 1,
+                 "title": "Slide 1",
+                 "background": "#ff0000"
+                 },
+                 {
+                 "id": 2,
+                 "title": "Slide 2",
+                 "background": "#00ff00"
+                 }
+                 ]
+}
+
