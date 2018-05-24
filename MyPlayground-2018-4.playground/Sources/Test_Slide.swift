@@ -2,11 +2,13 @@ import Foundation
 
 public class Test_Slide {
     public static func run() {
-        let slide = Slide()
-        let result = slide.sample()
-        print(result)
+        let slideData: [ReadParams.Slide]?
         
-        slide.canvas()
+        let params = ReadParams()
+        slideData = params.loadJson(filename:"slidedeck")
+        
+        let slide = Slide()
+        slide.canvas(backgroundColor:slideData![0].background)
         
         
     }

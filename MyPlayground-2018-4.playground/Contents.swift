@@ -1,13 +1,12 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
+
 import Foundation
-import CoreGraphics
 import PlaygroundSupport
 
 // run a test
 
-let testCase = 3
+let testCase = 0
 
 switch testCase {
 case 1 :
