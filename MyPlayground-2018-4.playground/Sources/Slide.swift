@@ -34,9 +34,30 @@ extension UIColor {
 //UIColor(hex: "ff0000")  // without #
 //UIColor(hex: "ff0000", alpha: 0.5) // using optional alpha value
 
-class Slide {
+ public class Slide {
     
-    func canvas (backgroundColor: String) {
+//    // default parameters for slide
+//    var params: Dictionary<String, Any> = [
+//        "x":0,
+//        "y":0,
+//        "height":40,
+//        "width":40,
+//        "AmountX": 4,
+//        "AmountY":4
+//    ]
+//
+//    public init (p: Dictionary<String, Any>? = nil) {
+//        params = p!
+//
+//    }
+//
+//    // internal function: get size of slides
+//    internal func getSize () ->Array<[String: Double]>  {
+//        let size = [[String: Double]]()
+//        return size
+//    }
+    
+     public func canvas (backgroundColor: String) {
         
         // Width and height of canvas
         let maxwidth = UIScreen.main.bounds.width

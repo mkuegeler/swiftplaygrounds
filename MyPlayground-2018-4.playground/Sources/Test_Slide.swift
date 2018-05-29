@@ -2,7 +2,7 @@ import Foundation
 
 public class Test_Slide {
     public static func run() {
-        let slideData: [ReadParams.Slide]?
+        let slideData: [Model.Slide]?
         
         let params = ReadParams()
         slideData = params.loadJson(filename:"slidedeck")
