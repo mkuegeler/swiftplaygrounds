@@ -1,0 +1,15 @@
+{
+    "header":{
+        "title": "This is my first presentation",
+        "width": 800,
+        "height": 200,
+        "Author": "Michael"
+    },
+    "slides":[
+              {
+              "id": 1,
+              "title": "Slide 1",
+              "background": "#ffeecc"
+              }
+              ]
+}
