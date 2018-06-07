@@ -1,0 +1,14 @@
+[
+ {
+ "id": 1,
+ "title": "Slide 1",
+ "background": "#ffeecc",
+ "description": "Just a text."
+ },
+ {
+ "id": 2,
+ "title": "Slide 2",
+ "background": "#ffeecc",
+ "description": "Just a text."
+ }
+ ]
