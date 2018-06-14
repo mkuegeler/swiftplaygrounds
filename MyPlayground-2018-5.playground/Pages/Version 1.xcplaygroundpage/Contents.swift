@@ -11,7 +11,7 @@ switch testCase {
 case 1 :
     Test_SlideModel.run()
 case 2 :
-    Test_MyClass.run()
+    Test_Slide.run()
 case 3 :
     Test_MyClass.run()
 default:

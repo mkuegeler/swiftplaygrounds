@@ -1,9 +1,11 @@
 import Foundation
 
-public class Test_SlideModel {
+public class Test_Slide {
     public static func run() {
         
         let fileName: String
+        
+        // var slide: Slide
         
         fileName = "slidedeck"
         
@@ -18,18 +20,25 @@ public class Test_SlideModel {
                 
                 print("The following slides are available:")
                 for slide in slides {
-                    print("\t\(slide.id) (\(slide.title) title)")
-                    if let description = slide.description {
-                        print("\t\t\(description)")
-                    }
+                    
+                    Slide().canvas(backgroundColor:slide.background)
+                    
+                    
+//                    print("\t\(slide.id) (\(slide.title) title)")
+//
+//                    if let description = slide.description {
+//                        print("\t\t\(description)")
+//                    }
                 }
                 
                 
             } catch {
                 print("error:\(error)")
             }
-        
+            
         }
         
     }
 }
+
+
