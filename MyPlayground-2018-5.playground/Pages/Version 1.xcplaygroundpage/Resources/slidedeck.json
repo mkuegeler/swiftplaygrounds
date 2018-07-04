@@ -2,13 +2,13 @@
  {
  "id": 1,
  "title": "Slide 1",
- "background": "#ffeecc",
+ "background": "#ffff00",
  "description": "Just a text."
  },
  {
  "id": 2,
  "title": "Slide 2",
- "background": "#ff0000",
+ "background": "#ff00ff",
  "description": "Just a text."
  }
  ]

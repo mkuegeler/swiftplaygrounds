@@ -29,9 +29,9 @@ extension UIColor {
     
 }
 // Slide class definition
-public class Slide {
+public class Slide  {
     
-    public func canvas (backgroundColor: String) {
+    public func canvas (backgroundColor: String) -> UIView {
         
         // Width and height of canvas
         let maxwidth = UIScreen.main.bounds.width
@@ -48,6 +48,8 @@ public class Slide {
         containerView.backgroundColor = UIColor(hex: backgroundColor)
         
         PlaygroundPage.current.liveView = containerView
+        
+        return containerView
         
         
     }
