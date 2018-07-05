@@ -31,7 +31,7 @@ public class Test_WriteFile {
         let today = Date()
         let DateStr: String = today.toString(dateFormat: "yyyy-MM-dd")
        
-        let randomInt: UInt32 = arc4random() % 10;
+        // let randomInt: UInt32 = arc4random() % 10;
         
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             
@@ -45,7 +45,8 @@ public class Test_WriteFile {
                 print("The following slides are available:")
                 for slide in slides {
                     
-                    outfile = DateStr+String(randomInt)+"-"+String(count)+".png"
+                    // outfile = DateStr+String(randomInt)+"-"+String(count)+".png"
+                    outfile = DateStr+"-"+String(count)+".png"
                     
                     output = Slide().canvas(backgroundColor:slide.background)
                     WriteFile().writePNG(containerView: output, filename:outfile)

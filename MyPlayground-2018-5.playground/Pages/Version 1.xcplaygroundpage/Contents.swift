@@ -5,7 +5,7 @@ import PlaygroundSupport
 
 // run a test
 
-let testCase = 1
+let testCase = 5
 
 switch testCase {
 case 1 :
@@ -16,6 +16,8 @@ case 3 :
     Test_MyClass.run()
 case 4 :
     Test_WriteFile.run()
+case 5 :
+    Test_SlidedeckModel.run()
 default:
     Test_MyClass.run()
 }

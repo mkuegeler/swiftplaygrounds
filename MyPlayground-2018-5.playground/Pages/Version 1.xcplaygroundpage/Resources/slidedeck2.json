@@ -1,0 +1,20 @@
+{
+    "slidedeck": {
+        "name": "My Deck",
+        "size": {"width":300, "height": 200},
+        "slides": [
+                   {
+                   "id": 1,
+                   "title": "Slide 1",
+                   "background": "#ffff00",
+                   "description": "Just a text."
+                   },
+                   {
+                   "id": 2,
+                   "title": "Slide 2",
+                   "background": "#ff00ff",
+                   "description": "Just a text."
+                   }
+                   ]
+    }
+}
