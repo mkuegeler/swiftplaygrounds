@@ -31,11 +31,13 @@ extension UIColor {
 // Slide class definition
 public class Slide  {
     
-    public func canvas (backgroundColor: String) -> UIView {
+    let maxwidth = UIScreen.main.bounds.width
+    let maxheight = UIScreen.main.bounds.height
+    
+    public func canvas (backgroundColor: String = "#cccccc",
+                        width: Double = 640, height: Double = 480) -> UIView {
         
         // Width and height of canvas
-        let maxwidth = UIScreen.main.bounds.width
-        let maxheight = UIScreen.main.bounds.height
         
         // PowerPoint wide-screen format: 1282x721
         
@@ -43,14 +45,13 @@ public class Slide  {
         // let h: Double = 721
         
         // View of canvas
-        let containerView = UIView(frame: CGRect(x:0, y:0,width: maxwidth,height: maxheight))
+        let containerView = UIView(frame: CGRect(x:0, y:0,width: width,height: height))
         
         containerView.backgroundColor = UIColor(hex: backgroundColor)
         
         PlaygroundPage.current.liveView = containerView
         
         return containerView
-        
         
     }
     
