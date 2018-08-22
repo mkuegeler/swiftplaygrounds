@@ -11,7 +11,7 @@ public class Test_Slide {
         
         
         
-        fileName = "slidedeck"
+        fileName = "slide"
         
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             
@@ -21,20 +21,22 @@ public class Test_Slide {
                 
                 let decoder = JSONDecoder()
                 
-                let slides = try decoder.decode([SlideModel.Slide].self, from: data)
+                let slide = try decoder.decode(SlideModel.Slide.self, from: data)
                 
-                print("The following slides are available:")
-                for slide in slides {
-                    
-                    var _ = Slide().canvas(backgroundColor:slide.background)
-                    
-                    
-//                    print("\t\(slide.id) (\(slide.title) title)")
-//
-//                    if let description = slide.description {
-//                        print("\t\t\(description)")
-//                    }
+                print("The following slide values are available:")
+                
+                print("id: \(slide.id)")
+                
+                print("title: \(slide.title)")
+                
+                print("background: \(slide.background)")
+                
+                // optional value: description
+                
+                if let description = slide.description {
+                           print("description: \(description)")
                 }
+                
                 
                 
             } catch {

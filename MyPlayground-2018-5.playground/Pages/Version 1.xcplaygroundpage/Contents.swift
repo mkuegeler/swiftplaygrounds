@@ -5,7 +5,7 @@ import PlaygroundSupport
 
 // run a test
 
-let testCase = 5
+let testCase = 2
 
 switch testCase {
 case 1 :
