@@ -2,5 +2,12 @@
     "id": 1,
     "title": "Slide 1",
     "background": "#ff0000",
-    "description": "Just a text."
+    "description": "Just a text.",
+    "ratio": {"width":1282, "height": 721},
+    "gradient": {
+        "colors": {"cgColor1":"#ff0000", "cgColor2":"#00ff00"},
+        "startPoint": {"x":0,"y":0},
+        "endPoint": {"x":0,"y":0}
+        
+    }
 }

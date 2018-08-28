@@ -47,11 +47,25 @@ public class Slide  {
         // View of canvas
         let containerView = UIView(frame: CGRect(x:0, y:0,width: width,height: height))
         
-        containerView.backgroundColor = UIColor(hex: backgroundColor)
+        // containerView.backgroundColor = UIColor(hex: backgroundColor)
+        
+        gradient(view: containerView)
         
         PlaygroundPage.current.liveView = containerView
         
         return containerView
+        
+    }
+    
+    private func gradient (view: UIView) {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.purple.cgColor, UIColor.yellow.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.frame = view.bounds
+        
+        view.layer.addSublayer(gradientLayer)
         
     }
     

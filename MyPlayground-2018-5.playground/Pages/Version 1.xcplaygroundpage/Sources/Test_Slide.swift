@@ -9,9 +9,19 @@ public class Test_Slide {
         
         let fileName: String
         
+        let outfile: String
         
+        var output: UIView
+        
+        let today = Date()
+        
+        let DateStr: String = today.toString(dateFormat: "yyyy-MM-dd")
+        
+        let count = 0
         
         fileName = "slide"
+        
+        outfile = DateStr+"-"+String(count)+".png"
         
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             
@@ -22,6 +32,13 @@ public class Test_Slide {
                 let decoder = JSONDecoder()
                 
                 let slide = try decoder.decode(SlideModel.Slide.self, from: data)
+                
+                let background = slide.background
+                
+                let width = slide.ratio.width
+                
+                let height = slide.ratio.height
+                
                 
                 print("The following slide values are available:")
                 
@@ -36,6 +53,14 @@ public class Test_Slide {
                 if let description = slide.description {
                            print("description: \(description)")
                 }
+                
+                print("width: \(slide.ratio.width)")
+                
+                print("height: \(slide.ratio.height)")
+                
+                
+                output = Slide().canvas(backgroundColor:background, width:width,height:height)
+                WriteFile().writePNG(containerView: output, filename:outfile)
                 
                 
                 
