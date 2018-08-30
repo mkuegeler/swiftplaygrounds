@@ -35,7 +35,9 @@ public class Slide  {
     let maxheight = UIScreen.main.bounds.height
     
     public func canvas (backgroundColor: String = "#cccccc",
-                        width: Double = 640, height: Double = 480) -> UIView {
+                        width: Double = 640, height: Double = 480,
+                        gradient: CAGradientLayer? = nil
+        ) -> UIView {
         
         // Width and height of canvas
         
@@ -49,7 +51,7 @@ public class Slide  {
         
         // containerView.backgroundColor = UIColor(hex: backgroundColor)
         
-        gradient(view: containerView)
+        GradientBackground (view: containerView)
         
         PlaygroundPage.current.liveView = containerView
         
@@ -57,10 +59,10 @@ public class Slide  {
         
     }
     
-    private func gradient (view: UIView) {
+    private func GradientBackground (view: UIView) {
         
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.purple.cgColor, UIColor.yellow.cgColor]
+        gradientLayer.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.frame = view.bounds
