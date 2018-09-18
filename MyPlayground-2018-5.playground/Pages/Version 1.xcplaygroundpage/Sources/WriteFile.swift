@@ -14,7 +14,7 @@ class WriteFile {
             containerView.drawHierarchy(in: containerView.bounds, afterScreenUpdates: true)
         }
         
-        if let data = UIImagePNGRepresentation(image) {
+        if let data = image.pngData() {
             let filename = playgroundSharedDataDirectory.appendingPathComponent(filename)
             try? data.write(to: filename)
         }

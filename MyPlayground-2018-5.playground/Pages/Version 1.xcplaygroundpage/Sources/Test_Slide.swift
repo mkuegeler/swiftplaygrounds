@@ -58,6 +58,12 @@ public class Test_Slide {
                 
                 print("height: \(slide.ratio.height)")
                 
+                // 18.9: Continue here
+                
+                if slide.gradient != nil {
+                    print("gradient: \(slide.gradient!.colors)")
+                }
+                
                 
                 output = Slide().canvas(backgroundColor:background, width:width,height:height)
                 WriteFile().writePNG(containerView: output, filename:outfile)
